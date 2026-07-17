@@ -1,10 +1,9 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: prism-os
 description: Système d'exploitation personnalisé pour la PRISM Steam Machine.
 
-# On se base sur l'image officielle de Bazzite (ici en version stable)
+# On se base sur l'image officielle de Bazzite
 base-image: ghcr.io/ublue-os/bazzite-deck
-image-version: stable
+image-version: latest # <--- MODIFIÉ ICI (stable -> latest)
 
 modules:
   # 1. On active ton script personnalisé (pour le logo et le fond d'écran)
