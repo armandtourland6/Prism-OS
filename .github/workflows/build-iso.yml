@@ -1,0 +1,19 @@
+name: Build ISO
+on:
+  workflow_dispatch: # Permet de lancer le build à la main en un clic
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Generate ISO
+        uses: blue-build/github-action@v1
+        with:
+          recipe: 'recipes/recipe.yml'
+          build_iso: true
