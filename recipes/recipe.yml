@@ -1,32 +1,13 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: prism-os
 description: Système d'exploitation personnalisé pour la PRISM Steam Machine.
 
-# On se base sur l'image officielle de Bazzite (version stable pour PC classique avec KDE)
-base-image: ghcr.io/ublue-os/bazzite
-image-version: latest
-
-# 1. Logiciels système (via rpm-ostree)
-# Ne mets ici que des outils système très légers ou des pilotes spécifiques si besoin.
-packages:
-  - neofetch
-  - htop
-  - git
+# On se base sur l'image officielle de Bazzite (ici en version stable)
+base-image: ghcr.io/ublue-os/bazzite-deck
+image-version: stable
 
 modules:
-  # 2. Logiciels de bureau (via Flatpak)
-  # C'est ICI que tu choisis tes logiciels pré-installés !
-  # Tu peux en ajouter ou en enlever de cette liste.
-  - type: flatpak
-    user:
-      install:
-        - com.discordapp.Discord       # Discord
-        - org.mozilla.firefox          # Firefox
-        - org.videolan.VLC             # Lecteur vidéo VLC
-        - com.spotify.Client           # Spotify
-        - org.gimp.GIMP                # GIMP (pour modifier tes images)
-
-  # 3. Activation du script de branding (ton logo et fond d'écran)
+  # 1. On active ton script personnalisé (pour le logo et le fond d'écran)
   - type: script
     scripts:
       - setup-branding.sh
- 
