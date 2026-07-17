@@ -15,6 +15,6 @@ jobs:
       - name: Generate ISO
         uses: blue-build/github-action@v1
         with:
-          recipe: 'recipes/recipe.yml'
+          recipe: 'recipe.yml' # <--- On laisse juste 'recipe.yml' !
           build_iso: true
-          build_opts: '--no-sign' # <--- C'est cette option exacte qui désactive la signature !
+          build_opts: '--no-sign'
