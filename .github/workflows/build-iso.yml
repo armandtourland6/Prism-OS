@@ -6,8 +6,7 @@ jobs:
   build-iso:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      packages: write
+      contents: write # Requis pour publier l'ISO dans les Releases
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -15,6 +14,7 @@ jobs:
       - name: Generate ISO
         uses: blue-build/github-action@v1
         with:
-          recipe: 'recipe.yml' # <--- On laisse juste 'recipe.yml' !
+          recipe: 'recipe.yml'
           build_iso: true
           build_opts: '--no-sign'
+          registry_token: '' # <--- IMPORTANT : On vide le jeton pour forcer le téléchargement public anonyme !
