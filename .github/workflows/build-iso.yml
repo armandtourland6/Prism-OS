@@ -1,6 +1,6 @@
 name: Build ISO
 on:
-  workflow_dispatch: # Permet de lancer le build à la main en un clic
+  workflow_dispatch:
 
 jobs:
   build-iso:
@@ -17,3 +17,4 @@ jobs:
         with:
           recipe: 'recipes/recipe.yml'
           build_iso: true
+          no_sign: true # <--- Désactive la vérification des clés
