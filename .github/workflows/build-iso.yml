@@ -9,7 +9,7 @@ jobs:
       contents: write # Requis pour publier l'ISO dans les Releases
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Generate ISO
         uses: blue-build/github-action@v1
